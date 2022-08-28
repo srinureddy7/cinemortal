@@ -27,7 +27,9 @@ const Header = () => {
       }`}
     >
       <div className="flex items-center space-x-2 md:space-x-10">
-        <p className="text-[#E50914] text-2xl font-bold">CINEMORTAL</p>
+        <Link href="/">
+          <p className="text-[#E50914] text-2xl font-bold">CINEMORTAL</p>
+        </Link>
         <ul className="hidden md:flex space-x-4">
           <li className="headerLink">Home</li>
           <li className="headerLink">TV Shows</li>

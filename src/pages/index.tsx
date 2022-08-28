@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Movie } from "../../typings";
 import { requests } from "../../utils";
-import { Banner, Header, Row } from "../components";
+import { Banner, Footer, Header, Row } from "../components";
 
 interface Props {
   netflixOriginals: Movie[];
@@ -47,6 +47,7 @@ const Home = ({
           <Row title="Documentaries" movies={documentaries} />
         </section>
       </main>
+      <Footer />
       {/* modal */}
     </div>
   );

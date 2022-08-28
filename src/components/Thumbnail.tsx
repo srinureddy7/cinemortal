@@ -20,7 +20,7 @@ const Thumbnail = ({ movie }: Props) => {
         layout="fill"
         alt=""
       />
-      <div className="bg-gray-200 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 inner-div h-full w-full top-0 left-0  absolute translate-y-[130px] p-2 md:p-6  ease-in-out transition-all duration-300">
+      <div className="bg-gray-200 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-5 inner-div h-full w-full top-0 left-0  absolute translate-y-[130px] p-2 md:p-6  ease-in-out transition-all duration-300">
         <p className="font-bold text-red-700 text-shadow-xl text-xs md:text-lg md:mt-4 mt-2">
           {movie?.title || movie?.name || movie?.original_name}
         </p>
