@@ -20,11 +20,11 @@ const Thumbnail = ({ movie }: Props) => {
         layout="fill"
         alt=""
       />
-      <div className="bg-[#00000081] inner-div h-full w-full top-0 left-0  absolute translate-y-0 p-2 md:p-6  ease-in-out transition-all duration-300">
+      <div className="bg-gray-200 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 inner-div h-full w-full top-0 left-0  absolute translate-y-[130px] p-2 md:p-6  ease-in-out transition-all duration-300">
         <p className="font-bold text-red-700 text-shadow-xl text-xs md:text-lg md:mt-4 mt-2">
           {movie?.title || movie?.name || movie?.original_name}
         </p>
-        <span className="flex flex-row items-center text-white justify-between ">
+        <span className="flex flex-row items-center text-white justify-between mt-2">
           <Rating
             className="!text-sm !md:text-base"
             name="read-only"
@@ -42,9 +42,10 @@ const Thumbnail = ({ movie }: Props) => {
             {new Date(movie?.release_date).getFullYear()}
           </span>
         </span>
-        <p className="text-xs md:text-base text-shadow-md">
-          Rating : {movie?.vote_average}
-        </p>
+        <div className="text-white text-sm mt-4">
+          {movie?.overview?.substring(0, 75)}
+          <p className="text-xs leading-4">...read more</p>
+        </div>
       </div>
     </div>
   );

@@ -20,7 +20,12 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`${isScrolled && "bg-[#0000009d]"}`}>
+    <header
+      className={`${
+        isScrolled &&
+        "bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20"
+      }`}
+    >
       <div className="flex items-center space-x-2 md:space-x-10">
         <p className="text-[#E50914] text-2xl font-bold">CINEMORTAL</p>
         <ul className="hidden md:flex space-x-4">
