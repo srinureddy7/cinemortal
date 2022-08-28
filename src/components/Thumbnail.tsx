@@ -1,3 +1,5 @@
+import { Star } from "@mui/icons-material";
+import { Rating } from "@mui/material";
 import Image from "next/image";
 import { Movie } from "../../typings";
 
@@ -11,12 +13,10 @@ const Thumbnail = ({ movie }: Props) => {
   console.log(movie);
 
   return (
-    <div className="relative outer-main-div h-28 rounded-md overflow-hidden min-w-[150px] cursor-pointer  transition duration-200 ease-out md:h-52 md:min-w-[300px] md:hover:scale-105 hover:-translate-y-2">
+    <div className="relative outer-main-div h-52 rounded-md overflow-hidden min-w-[150px] cursor-pointer  transition duration-200 ease-out md:h-52 md:min-w-[300px] md:hover:scale-105 hover:-translate-y-2">
       <Image
         className="h-full w-full absolute"
-        src={`https://image.tmdb.org/t/p/w500${
-          movie.backdrop_path || movie.poster_path
-        }`}
+        src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}
         layout="fill"
         alt=""
       />
@@ -24,6 +24,24 @@ const Thumbnail = ({ movie }: Props) => {
         <p className="font-bold text-red-700 text-shadow-xl text-xs md:text-lg md:mt-4 mt-2">
           {movie?.title || movie?.name || movie?.original_name}
         </p>
+        <span className="flex flex-row items-center text-white justify-between ">
+          <Rating
+            className="!text-sm !md:text-base"
+            name="read-only"
+            emptyIcon={
+              <Star
+                className="text-gray-500  !text-sm !md:text-base"
+                fontSize="inherit"
+              />
+            }
+            precision={0.5}
+            value={movie?.vote_average / 2}
+            readOnly
+          />
+          <span className="text-sm">
+            {new Date(movie?.release_date).getFullYear()}
+          </span>
+        </span>
         <p className="text-xs md:text-base text-shadow-md">
           Rating : {movie?.vote_average}
         </p>
