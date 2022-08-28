@@ -1,10 +1,10 @@
 import { Star } from "@mui/icons-material";
 import { Rating } from "@mui/material";
 import Image from "next/image";
-import { Movie } from "../../typings";
+// import { Movie } from "../../typings";
 
 interface Props {
-  movie: Movie;
+  movie: any;
 }
 
 // yt video stops at 1.56.00 hrs
